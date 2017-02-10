@@ -16,7 +16,7 @@ void ADC_Config(void)
 //	RCC_ADCCLKConfig(RCC_PCLK2_Div6);
 	
 	/* PB0-ADC channel 8 */
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 	
@@ -29,7 +29,7 @@ void ADC_Config(void)
 	ADC_InitStructure.ADC_NbrOfChannel = 1;								/* 顺序进行规则转换的ADC通道数目 */
 	ADC_Init(ADC1, &ADC_InitStructure);
 	 
-	//ADC_RegularChannelConfig(ADC1, ADC_Channel_8, 1, ADC_SampleTime_13Cycles5);
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_8, 1, ADC_SampleTime_13Cycles5);
 	
 	ADC_Cmd(ADC1, ENABLE);
 	ADC_ResetCalibration(ADC1);
