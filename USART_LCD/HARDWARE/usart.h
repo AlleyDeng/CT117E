@@ -7,6 +7,10 @@
 
 #define MAXDATASIZE 200
 
+extern uint8_t USART_RXBUF[20];
+extern uint8_t RXCUNT;
+extern uint8_t RXOVER;
+
 void USART_Config(void);
 void USART_SendString(unsigned char *str);
 char* USART_ReceiveString(void);

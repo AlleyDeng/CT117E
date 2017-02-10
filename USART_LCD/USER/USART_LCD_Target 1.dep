@@ -1,5 +1,5 @@
 Dependencies for Project 'USART_LCD', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x587B23F1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\USER -I..\STM32FWLib\inc -I..\HARDWARE -I..\CORE-I "D:\Program Files (x86)\MDK4\ARM\RV31\INC"-I "D:\Program Files (x86)\MDK4\ARM\CMSIS\Include"-I "D:\Program Files (x86)\MDK4\ARM\Inc\ST\STM32F10x"-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x589D8555)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\USER -I..\STM32FWLib\inc -I..\HARDWARE -I..\CORE-I "D:\Program Files (x86)\MDK4\ARM\RV31\INC"-I "D:\Program Files (x86)\MDK4\ARM\CMSIS\Include"-I "D:\Program Files (x86)\MDK4\ARM\Inc\ST\STM32F10x"-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (D:\Program Files (x86)\MDK4\ARM\ARMCC\include\stdint.h)(0x51C7C554)
@@ -31,7 +31,7 @@ I (..\STM32FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32FWLib\inc\misc.h)(0x4D783BB4)
 I (..\HARDWARE\lcd.h)(0x4FCF5AA4)
 I (..\HARDWARE\led.h)(0x583BEAEF)
-I (..\HARDWARE\usart.h)(0x587B231B)
+I (..\HARDWARE\usart.h)(0x589D8376)
 I (D:\Program Files (x86)\MDK4\ARM\ARMCC\include\string.h)(0x51C7C554)
 F (.\stm32f10x_it.c)(0x587745B6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\USER -I..\STM32FWLib\inc -I..\HARDWARE -I..\CORE-I "D:\Program Files (x86)\MDK4\ARM\RV31\INC"-I "D:\Program Files (x86)\MDK4\ARM\CMSIS\Include"-I "D:\Program Files (x86)\MDK4\ARM\Inc\ST\STM32F10x"-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x4D99A59E)
@@ -825,8 +825,8 @@ I (..\STM32FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32FWLib\inc\misc.h)(0x4D783BB4)
-F (..\HARDWARE\usart.c)(0x587B2582)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\USER -I..\STM32FWLib\inc -I..\HARDWARE -I..\CORE-I "D:\Program Files (x86)\MDK4\ARM\RV31\INC"-I "D:\Program Files (x86)\MDK4\ARM\CMSIS\Include"-I "D:\Program Files (x86)\MDK4\ARM\Inc\ST\STM32F10x"-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
-I (..\HARDWARE\USART.h)(0x587B231B)
+F (..\HARDWARE\usart.c)(0x589D86B7)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\USER -I..\STM32FWLib\inc -I..\HARDWARE -I..\CORE-I "D:\Program Files (x86)\MDK4\ARM\RV31\INC"-I "D:\Program Files (x86)\MDK4\ARM\CMSIS\Include"-I "D:\Program Files (x86)\MDK4\ARM\Inc\ST\STM32F10x"-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
+I (..\HARDWARE\USART.h)(0x589D8376)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (D:\Program Files (x86)\MDK4\ARM\ARMCC\include\stdint.h)(0x51C7C554)

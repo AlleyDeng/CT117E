@@ -25,7 +25,7 @@ void USART_Config(void)
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 3;	/* 抢占优先级3 */
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;			/* 子优先级3 */
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;				
-	
+	NVIC_Init(&NVIC_InitStructure);
 	
 	/* USART2 工作模式配置 */
 	USART_InitStructure.USART_BaudRate = 19200;
@@ -53,18 +53,18 @@ void USART_SendString(unsigned char *str)
 
 void USART2_IRQHandler(void)
 { 
-	unsigned char Res;
-	extern unsigned char str[20];
-	static int i = 0;
-	if (USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) {	/* 接收到数据 */
-		Res = USART_ReceiveData(USART2);
-		if (Res == '\r' || Res == '\0' || Res == '\n') {
-			str[i] = 0;	
-			i = 0;
-			USART_SendString(str);
-			LCD_DisplayStringLine(Line1, str);			
+	uint8_t temp;
+	
+	if (USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) {
+		USART_ClearITPendingBit(USART2, USART_IT_RXNE);
+		temp = USART_ReceiveData(USART2);
+		if ((temp == '#') || (RXCUNT == 20)) {
+			RXCUNT = 0;
+			RXOVER = 1;	/* 接收完成标志 */
+			USART_ITConfig(USART2, USART_IT_RXNE, DISABLE);
 		}	else {
-			str[i++] = Res;
+			USART_RXBUF[RXCUNT++] = temp;
+//			RXCUNT++;
 		}
 	}
 }
