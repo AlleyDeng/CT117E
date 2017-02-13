@@ -8,7 +8,7 @@
 #define MAXDATASIZE 200
 
 void USART_Config(void);
-void USART_SendString(unsigned char *str);
+void USART_SendString(char *str);
 char* USART_ReceiveString(void);
 
 extern void DelayMs(unsigned int a);

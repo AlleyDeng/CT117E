@@ -29,3 +29,7 @@
 ..\obj\stm32f10x_it.o: ..\STM32FWLib\inc\stm32f10x_usart.h
 ..\obj\stm32f10x_it.o: ..\STM32FWLib\inc\stm32f10x_wwdg.h
 ..\obj\stm32f10x_it.o: ..\STM32FWLib\inc\misc.h
+..\obj\stm32f10x_it.o: ..\HARDWARE\lcd.h
+..\obj\stm32f10x_it.o: ..\HARDWARE\led.h
+..\obj\stm32f10x_it.o: ..\HARDWARE\key.h
+..\obj\stm32f10x_it.o: D:\Program Files (x86)\MDK4\ARM\ARMCC\bin\..\include\stdio.h

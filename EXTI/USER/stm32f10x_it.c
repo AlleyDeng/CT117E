@@ -134,8 +134,34 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
-	extern unsigned int TimingDelay;
+	extern uint32_t TimingDelay;
 	TimingDelay --;
+}
+
+void EXTI0_IRQHandler(void)
+{
+	if(EXTI_GetITStatus(EXTI_Line0) != RESET)
+	{
+		DelayMs(10);
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0) == 0) {
+			LCD_DisplayStringLine(Line7, " Button1 pressed...");
+			while(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_8)==0);
+			EXTI_ClearITPendingBit(EXTI_Line0);
+		}
+	}
+}
+
+void EXTI9_5_IRQHandler(void)
+{
+	if(EXTI_GetITStatus(EXTI_Line8) != RESET)
+	{
+		DelayMs(10);
+		if (GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_8) == 0) {
+			LCD_DisplayStringLine(Line7, " Button2 pressed...");
+			while(GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_8)==0);
+			EXTI_ClearITPendingBit(EXTI_Line8);
+		}
+	}
 }
 
 /******************************************************************************/

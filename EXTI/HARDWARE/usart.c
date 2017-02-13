@@ -40,12 +40,11 @@ void USART_Config(void)
 	USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);	/* 开启串口接受中断 */
 }
 
-void USART_SendString(unsigned char *str)
+void USART_SendString(char *string)
 {
 	unsigned int index = 0;
-	
-	while (str[index] != 0) {
-		USART_SendData(USART2, str[index]);
+	while (string[index] != 0) {
+		USART_SendData(USART2, string[index]);
 		while (USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET);
 		index ++;
 	}	
@@ -54,17 +53,17 @@ void USART_SendString(unsigned char *str)
 void USART2_IRQHandler(void)
 { 
 	unsigned char Res;
-	extern unsigned char str[20];
+	extern uint8_t string[20];
 	static int i = 0;
 	if (USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) {	/* 接收到数据 */
 		Res = USART_ReceiveData(USART2);
 		if (Res == '\r' || Res == '\0' || Res == '\n') {
-			str[i] = 0;	
+			string[i] = 0;	
 			i = 0;
-			USART_SendString(str);
-			LCD_DisplayStringLine(Line1, str);			
+			USART_SendString(string);
+			LCD_DisplayStringLine(Line1, string);			
 		}	else {
-			str[i++] = Res;
+			string[i++] = Res;
 		}
 	}
 }

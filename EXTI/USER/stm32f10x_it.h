@@ -29,7 +29,11 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x.h"
-
+#include "lcd.h"
+#include "led.h"
+#include "key.h"	
+#include <stdio.h>	
+	 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
@@ -44,6 +48,11 @@ void SVC_Handler(void);
 void DebugMon_Handler(void);
 void PendSV_Handler(void);
 void SysTick_Handler(void);
+void EXTI0_IRQHandler(void);
+void EXTI9_5_IRQHandler(void);
+
+extern void DelayMs(uint32_t nTime);
+extern uint8_t string[20];
 
 #ifdef __cplusplus
 }

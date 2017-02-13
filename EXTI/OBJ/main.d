@@ -29,3 +29,4 @@
 ..\obj\main.o: ..\STM32FWLib\inc\stm32f10x_wwdg.h
 ..\obj\main.o: ..\STM32FWLib\inc\misc.h
 ..\obj\main.o: ..\HARDWARE\lcd.h
+..\obj\main.o: ..\HARDWARE\exti.h
