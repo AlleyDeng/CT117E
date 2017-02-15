@@ -6,15 +6,29 @@
 #include "lcd.h"
 #include "beep.h"
 #include "usart.h"
+#include "rtc.h"
 
 uint32_t nTimingDelay = 0;
 uint32_t RxCounter = 0;
+//uint32_t packingTime[2][10] = {0};
 uint8_t keyTemp = 0;
 uint8_t string[20];
 uint8_t RxBuffer[20];
 uint8_t RxFlag = 0;
+uint8_t timeDisplayFlag = 0;
 int packingSpace = 10;
 
+void TimeDisplay(uint32_t timeShow)
+{
+	uint8_t str[20];
+	
+	uint32_t HH = timeShow / 3600;
+	uint32_t MM = (timeShow % 3600) / 60;
+	uint32_t SS = (timeShow % 3600) % 60;
+	
+	sprintf (str, "  Time: %.2d:%.2d:%.2d   ", HH, MM, SS);
+	LCD_DisplayStringLine(Line9, str);
+}
 void DelayMs(uint32_t nTime)	
 {
 	nTimingDelay = nTime;
@@ -28,6 +42,7 @@ int main (void)
 	NVIC_SetPriority(SysTick_IRQn, 0);
 	LED_Config();
 	Key_Config();
+	RTC_Config();
 	Beep_Config();
 	Usart_Config();
 	STM3210B_LCD_Init();
@@ -44,6 +59,17 @@ int main (void)
 	LCD_DisplayStringLine(Line1, string);
 	
 	while (1) {
-		GPIO_SetBits(GPIOB, GPIO_Pin_4);
+		if (packingSpace == 0) {		/* 没有停车位 */
+			LED_Control(LEDALL, 0);
+			LED_Control(LED0, 1);
+		}	else {						/* 有停车位 */
+			LED_Control(LEDALL, 0);
+			LED_Control(LED1, 1);
+		}
+		if (timeDisplayFlag == 1) {
+			TimeDisplay(RTC_GetCounter());	/* 显示时间 */
+			timeDisplayFlag = 0;
+		}
+		//GPIO_SetBits(GPIOB, GPIO_Pin_4);
 	}
 }

@@ -3,17 +3,44 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\deng_chao\Desktop\À¶ÇÅ±­\Practice\USER\practice.uvproj
+C:\Users\deng_chao\Desktop\À¶ÇÅ±­\Practice1\USER\practice.uvproj
 Project File Date:  02/11/2017
 
 <h2>Output:</h2>
-Load "..\\OBJ\\practice.axf" 
-'D:\Program Files (x86)\MDK4\ARM\BIN\coocox-agdi.dll' invalid peripheral driver
-Error: Flash Download failed  -  D:\Program Files (x86)\MDK4\ARM\BIN\coocox-agdi.dll
+Build target 'Target 1'
+compiling main.c...
+main.c(29): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+        sprintf (str, "  Time: %.2d:%.2d:%.2d   ", HH, MM, SS);
+main.c(58): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+        sprintf(string, "%s%d%c", " packingSpace : ", packingSpace, ' ');
+main.c: 2 warnings, 0 errors
+compiling stm32f10x_it.c...
+stm32f10x_it.c(170): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+                if (strcmp(RxBuffer, "ID1") == 0) {
+stm32f10x_it.c(173): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+                if (strcmp(RxBuffer, "ID2") == 0) {
+stm32f10x_it.c(195): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                        sprintf(string, "%s%d%c", " packingSpace : ", packingSpace, ' ');
+stm32f10x_it.c(223): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                        sprintf(string, "%s%d%c", " packingSpace : ", packingSpace, ' ');
+stm32f10x_it.c: 4 warnings, 0 errors
+linking...
+Program Size: Code=10096 RO-data=4828 RW-data=64 ZI-data=1672  
+FromELF: creating hex file...
+"..\OBJ\practice.axf" - 0 Error(s), 6 Warning(s).
 Load "..\\OBJ\\practice.axf" 
 Erasing Done.
-Program Speed: 12.27 KByte/s
+Program Speed: 12.31 KByte/s
 Programming Done.
-</pre>
-</body>
-</html>
+reated
+compiling stm32f10x_it.c...
+stm32f10x_it.c(168): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+                if (strcmp(RxBuffer, "ID1") == 0) {
+stm32f10x_it.c(173): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+                if (strcmp(RxBuffer, "LED7_ON") == 0) {
+stm32f10x_it.c(197): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                        sprintf(string, "%s%d%c", " packingSpace : ", packingSpace, ' ');
+stm32f10x_it.c(225): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+                        sprintf(string, "%s%d%c", " packingSpace : ", packingSpace, ' ');
+stm32f10x_it.c: 4 warnings, 0 errors
+"stm32f10x_it.c" - 0 Error(s), 4 Warning(s).

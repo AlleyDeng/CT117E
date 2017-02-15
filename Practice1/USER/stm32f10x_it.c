@@ -153,10 +153,12 @@ void USART2_IRQHandler(void)
 	extern uint8_t RxBuffer[20];
 	extern uint8_t string[20];
 	extern uint8_t RxFlag;
+//	extern uint32_t packingTime[2][10];
+	
 	uint8_t temp;
 	if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET) {
 		temp = USART_ReceiveData(USART2);
-		if (temp == 20 || temp == 'x') {
+		if (temp == 20 || temp == '\n' || temp == '\r') {
 			RxCounter = 0;
 			RxFlag = 1;
 		} else {
@@ -165,15 +167,11 @@ void USART2_IRQHandler(void)
 	}
 	if (RxFlag == 1) {
 		RxFlag = 0;
-		if (strcmp(RxBuffer, "LED0_ON") == 0) {
-			LCD_DisplayStringLine(Line4, RxBuffer);
-			LED_Control(LEDALL, 0);
-			LED_Control(LED0, 1);
+		if (strcmp(RxBuffer, "ID1") == 0) {
+			LCD_DisplayStringLine(Line4, RxBuffer);	
 		}
-		if (strcmp(RxBuffer, "LED1_ON") == 0) {
+		if (strcmp(RxBuffer, "ID2") == 0) {
 			LCD_DisplayStringLine(Line4, RxBuffer);
-			LED_Control(LEDALL, 0);
-			LED_Control(LED1, 1);
 		}
 	}
 }
@@ -197,6 +195,7 @@ void EXTI0_IRQHandler(void)
 			sprintf(string, "%s%d%c", " packingSpace : ", packingSpace, ' ');
 			LCD_DisplayStringLine(Line1, string);
 			while (KEY1 != 1);
+			GPIO_SetBits(GPIOB, GPIO_Pin_4);
 		}
 
 		/* Clear the  EXTI line 0 pending bit */
@@ -229,6 +228,23 @@ void EXTI9_5_IRQHandler(void)
 		/* Clear the  EXTI line 0 pending bit */
 		EXTI_ClearITPendingBit(EXTI_Line8);
 	}
+}
+
+void RTC_IRQHandler(void)
+{
+	extern uint8_t timeDisplayFlag;
+  if (RTC_GetITStatus(RTC_IT_SEC) != RESET)
+  {
+    /* Clear the RTC Second interrupt */
+    RTC_ClearITPendingBit(RTC_IT_SEC);
+
+    /* Enable time update */
+    timeDisplayFlag = 1;
+
+    /* Wait until last write operation on RTC registers has finished */
+    RTC_WaitForLastTask();
+    
+  }
 }
 
 /******************************************************************************/

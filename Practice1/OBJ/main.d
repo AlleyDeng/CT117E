@@ -35,3 +35,4 @@
 ..\obj\main.o: ..\HARDWARE\lcd.h
 ..\obj\main.o: ..\HARDWARE\beep.h
 ..\obj\main.o: ..\HARDWARE\usart.h
+..\obj\main.o: ..\HARDWARE\rtc.h
