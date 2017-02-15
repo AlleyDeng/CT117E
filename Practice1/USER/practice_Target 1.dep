@@ -1,5 +1,5 @@
 Dependencies for Project 'practice', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x58A3F06A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\CORE -I..\HARDWARE -I..\STM32FWLib\inc -I..\USER-I "D:\Program Files (x86)\MDK4\ARM\RV31\INC"-I "D:\Program Files (x86)\MDK4\ARM\CMSIS\Include"-I "D:\Program Files (x86)\MDK4\ARM\Inc\ST\STM32F10x"-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x58A3F3E7)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\CORE -I..\HARDWARE -I..\STM32FWLib\inc -I..\USER-I "D:\Program Files (x86)\MDK4\ARM\RV31\INC"-I "D:\Program Files (x86)\MDK4\ARM\CMSIS\Include"-I "D:\Program Files (x86)\MDK4\ARM\Inc\ST\STM32F10x"-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (D:\Program Files (x86)\MDK4\ARM\ARMCC\include\stdio.h)(0x51C7C554)
 I (D:\Program Files (x86)\MDK4\ARM\ARMCC\include\string.h)(0x51C7C554)
 I (stm32f10x.h)(0x4D783CB4)
@@ -37,7 +37,7 @@ I (..\HARDWARE\lcd.h)(0x4FCF5AA4)
 I (..\HARDWARE\beep.h)(0x58A04EE3)
 I (..\HARDWARE\usart.h)(0x58A11828)
 I (..\HARDWARE\rtc.h)(0x58A3EB87)
-F (.\stm32f10x_it.c)(0x58A3F06A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\CORE -I..\HARDWARE -I..\STM32FWLib\inc -I..\USER-I "D:\Program Files (x86)\MDK4\ARM\RV31\INC"-I "D:\Program Files (x86)\MDK4\ARM\CMSIS\Include"-I "D:\Program Files (x86)\MDK4\ARM\Inc\ST\STM32F10x"-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
+F (.\stm32f10x_it.c)(0x58A3F435)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\CORE -I..\HARDWARE -I..\STM32FWLib\inc -I..\USER-I "D:\Program Files (x86)\MDK4\ARM\RV31\INC"-I "D:\Program Files (x86)\MDK4\ARM\CMSIS\Include"-I "D:\Program Files (x86)\MDK4\ARM\Inc\ST\STM32F10x"-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x58A1A77E)
 I (stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)

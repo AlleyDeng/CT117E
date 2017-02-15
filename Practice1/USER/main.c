@@ -58,6 +58,8 @@ int main (void)
 	sprintf(string, "%s%d%c", " packingSpace : ", packingSpace, ' ');
 	LCD_DisplayStringLine(Line1, string);
 	
+	RTC_SetCounter(55+60*59+23*60*60);
+	
 	while (1) {
 		if (packingSpace == 0) {		/* 没有停车位 */
 			LED_Control(LEDALL, 0);

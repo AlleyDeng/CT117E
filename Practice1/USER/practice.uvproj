@@ -590,6 +590,11 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\usart.c</FilePath>
             </File>
+            <File>
+              <FileName>rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\rtc.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

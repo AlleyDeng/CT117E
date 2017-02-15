@@ -235,6 +235,10 @@ void RTC_IRQHandler(void)
 	extern uint8_t timeDisplayFlag;
   if (RTC_GetITStatus(RTC_IT_SEC) != RESET)
   {
+	  if (RTC_GetCounter() == 60*60*24) {
+		RTC_SetCounter(0x00);
+	  }
+	  
     /* Clear the RTC Second interrupt */
     RTC_ClearITPendingBit(RTC_IT_SEC);
 

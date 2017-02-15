@@ -44,7 +44,7 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>..\</OutputDirectory>
+          <OutputDirectory>..\OBJ\</OutputDirectory>
           <OutputName>practice</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
@@ -586,9 +586,9 @@
               <FilePath>..\HARDWARE\beep.c</FilePath>
             </File>
             <File>
-              <FileName>USART.c</FileName>
+              <FileName>usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\HARDWARE\USART.c</FilePath>
+              <FilePath>..\HARDWARE\usart.c</FilePath>
             </File>
           </Files>
         </Group>
