@@ -28,8 +28,12 @@
 #endif 
 
 /* Includes ------------------------------------------------------------------*/
+#include <stdio.h>
 #include "stm32f10x.h"
 #include "rtc.h"
+#include "key.h"
+#include "adc.h"
+#include "usart.h"	 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
@@ -44,6 +48,14 @@ void SVC_Handler(void);
 void DebugMon_Handler(void);
 void PendSV_Handler(void);
 void SysTick_Handler(void);
+void EXTI0_IRQHandler(void);
+void EXTI1_IRQHandler(void);
+void EXTI2_IRQHandler(void);
+void EXTI9_5_IRQHandler(void);
+void USART2_IRQHandler(void);
+extern void DelayMs(uint32_t nTime);
+
+extern uint8_t lcdString[20];
 
 #ifdef __cplusplus
 }

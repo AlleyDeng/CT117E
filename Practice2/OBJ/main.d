@@ -33,3 +33,5 @@
 ..\obj\main.o: ..\HARDWARE\adc.h
 ..\obj\main.o: ..\HARDWARE\led.h
 ..\obj\main.o: ..\HARDWARE\rtc.h
+..\obj\main.o: ..\HARDWARE\key.h
+..\obj\main.o: ..\HARDWARE\usart.h

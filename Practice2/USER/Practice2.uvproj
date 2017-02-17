@@ -465,6 +465,16 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\rtc.c</FilePath>
             </File>
+            <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\key.c</FilePath>
+            </File>
+            <File>
+              <FileName>usrt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\usrt.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -9,6 +9,8 @@
 "..\obj\adc.o"
 "..\obj\led.o"
 "..\obj\rtc.o"
+"..\obj\key.o"
+"..\obj\usrt.o"
 "..\obj\misc.o"
 "..\obj\stm32f10x_adc.o"
 "..\obj\stm32f10x_bkp.o"
