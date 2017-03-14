@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\Practice2.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\Practice2.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri Feb 17 15:54:56 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Tue Mar 14 17:59:33 2017
 <BR><P>
 <H3>Maximum Stack Usage =        320 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -841,7 +841,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[5d]"></a>USART_Config</STRONG> (Thumb, 154 bytes, Stack size 32 bytes, usrt.o(.text))
+<P><STRONG><a name="[5d]"></a>USART_Config</STRONG> (Thumb, 154 bytes, Stack size 32 bytes, usart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = USART_Config &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
@@ -855,7 +855,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[68]"></a>USART_SendString</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, usrt.o(.text))
+<P><STRONG><a name="[68]"></a>USART_SendString</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, usart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = USART_SendString
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
@@ -1197,10 +1197,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[b3]"></a>RCC_APB2PeriphResetCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_AFIODeInit
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_DeInit
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DeInit
+<BR><BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DeInit
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_DeInit
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_AFIODeInit
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_DeInit
 </UL>
 
 <P><STRONG><a name="[b8]"></a>RCC_APB1PeriphResetCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)

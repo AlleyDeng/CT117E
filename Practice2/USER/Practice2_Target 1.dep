@@ -290,7 +290,7 @@ I (..\STM32FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32FWLib\inc\misc.h)(0x4D783BB4)
-F (..\HARDWARE\usrt.c)(0x58A6A2D6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\CORE -I..\HARDWARE -I..\USER -I..\STM32FWLib\inc-I "D:\Program Files (x86)\MDK4\ARM\RV31\INC"-I "D:\Program Files (x86)\MDK4\ARM\CMSIS\Include"-I "D:\Program Files (x86)\MDK4\ARM\Inc\ST\STM32F10x"-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\usrt.o --omf_browse ..\obj\usrt.crf --depend ..\obj\usrt.d)
+F (..\HARDWARE\usart.c)(0x58A6A2D6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\CORE -I..\HARDWARE -I..\USER -I..\STM32FWLib\inc-I "D:\Program Files (x86)\MDK4\ARM\RV31\INC"-I "D:\Program Files (x86)\MDK4\ARM\CMSIS\Include"-I "D:\Program Files (x86)\MDK4\ARM\Inc\ST\STM32F10x"-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
 I (..\HARDWARE\usart.h)(0x58A67288)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
