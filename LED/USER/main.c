@@ -9,9 +9,9 @@ int main (void)
 	
 	while (1) {
 		for (i = 0xCCCCC; i > 0; i--)
-			LED_Control(LED1, 1);
+			LED_Control(LED0, 1);
 		for (i = 0xCCCCC; i > 0; i--)
-			LED_Control(LED1, 0);
+			LED_Control(LED0, 0);
 	}		
 }
 

@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <string.h>
+#include "stm32f10x.h"
+#include "lcd.h"
+#include "led.h"
+#include "beep.h"
+#include "key.h"
+#include "usart.h"
+#include "rtc.h"
+
+uint8_t NbrOfDataToRead = 20;
+uint8_t RxCounter;
+uint8_t RxFlag;
+uint8_t RxBuffer[20] = {0};
+uint32_t timingDelay;
+
+void DelayMs(uint32_t nTime)
+{
+	timingDelay = nTime;
+	while (timingDelay != 0);
+}
+
+int main (void)
+{
+	SysTick_Config(SystemCoreClock/1000);
+	NVIC_SetPriority(SysTick_IRQn, 0);
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+	
+//	BEEP_Config();
+	LED_Config();
+	KEY_Config();
+	USART_Config();
+	STM3210B_LCD_Init();
+	LCD_Clear(Blue);
+	LCD_SetTextColor(White);
+	LCD_SetBackColor(Blue);
+	
+	//USART_SendData(USART2, 'a');	
+	LCD_DisplayStringLine(Line1, "      Practice5     ");
+	LED_Control(LEDALL, 0);
+	
+	printf("Are you OK?\n");
+
+	GPIO_ResetBits(GPIOB, GPIO_Pin_4);
+	DelayMs(100);
+	GPIO_SetBits(GPIOB, GPIO_Pin_4);
+	DelayMs(100);
+	
+	while (1) {
+		if (RxFlag == 1) {
+			printf("%s\n", RxBuffer);
+			if (strstr((char *)RxBuffer, "LED1ON") != 0) {
+				LED_Control(LEDALL, 0);
+				LED_Control(LED1, 1);
+			}
+			if (strstr((char *)RxBuffer, "LED1OFF") != 0) {
+				LED_Control(LEDALL, 1);
+				LED_Control(LED1, 0);
+			}
+			RxFlag = 0;
+			USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
+		}
+		
+//		LED_Control(LED1, 1);
+//		DelayMs(100);
+//		LED_Control(LED1, 0);
+//		DelayMs(100);
+	}
+}
+

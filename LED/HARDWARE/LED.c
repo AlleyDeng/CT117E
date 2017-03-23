@@ -21,9 +21,9 @@ void LED_Init(void)
 
 /*
  *控制打开或关闭LED
- *LED:LED编号，GPIO_Pin_8到GPIO_Pin_15
+ *LED:LED编号，GPIO_Pin_8到GPIO_Pin_15和LEDALL
  *LED_Status:0,关闭LED	1,打开LED
-*/
+**/
 void LED_Control(uint16_t LED, uint8_t LED_Status)
 {
 	if (LED_Status == 1) {

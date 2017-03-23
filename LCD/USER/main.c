@@ -33,30 +33,10 @@ int main(void)
 
 //	LCD_Clear(Blue);
 //	LCD_DisplayStringLine(Line4 ,"    Hello,world.   ");
-//	Delay_Ms(1000);
-
-	LCD_SetBackColor(White);
-	LCD_DisplayStringLine(Line0,"                    ");	
-	LCD_SetBackColor(Black);
-	LCD_DisplayStringLine(Line1,"                    ");	
-	LCD_SetBackColor(Grey);
-	LCD_DisplayStringLine(Line2,"                    ");
-	LCD_SetBackColor(Blue);
-	LCD_DisplayStringLine(Line3,"                    ");
-	LCD_SetBackColor(Blue2);
-	LCD_DisplayStringLine(Line4,"                    ");
-	LCD_SetBackColor(Red);						
-	LCD_DisplayStringLine(Line5,"                    ");
-	LCD_SetBackColor(Magenta);	
-	LCD_DisplayStringLine(Line6,"                    ");
-	LCD_SetBackColor(Green);	
-	LCD_DisplayStringLine(Line7,"                    ");	
-	LCD_SetBackColor(Cyan);	
-	LCD_DisplayStringLine(Line8,"                    ");
-	LCD_SetBackColor(Yellow);		
-	LCD_DisplayStringLine(Line9,"                    ");	
+//	Delay_Ms(1000);	
 	
 	while(1) {
+		LCD_DisplayStringLine(Line1, "DENGCHAO");
 		LED_Control(LEDALL, 0);
 		LED_Control(LED0, 1);
 		Delay_Ms(100);
