@@ -8,6 +8,9 @@
 #include "usart.h"
 #include "rtc.h"
 #include "adc.h"
+#include "timer.h"
+#include "i2c.h"
+#include "eeprom.h"
 
 uint8_t NbrOfDataToRead = 20;
 uint8_t RxCounter;
@@ -37,6 +40,7 @@ int main (void)
     LED_Config();
     KEY_Config();
 	RTC_Config();
+	TIMER_Config();
     USART_Config();
     STM3210B_LCD_Init();
     LCD_Clear(Blue);
@@ -68,7 +72,7 @@ int main (void)
 		if (RxFlag == 1) {
 //			USART_SendData(USART2, RxBuffer[0]);
 			printf("%s\n", RxBuffer);
-            if (strstr((c  har *)RxBuffer, "LED1ON") != 0) {
+            if (strstr((char *)RxBuffer, "LED1ON") != 0) {
                 LED_Control(LEDALL, 0);
                 LED_Control(LED1, 1);
             }
